@@ -1,4 +1,7 @@
 import Foundation
+import Alamofire
+import SwiftyJSON
+import Keys
 
 class Shop: Printable {
     var gid: String? = nil
@@ -72,6 +75,20 @@ class QueryCondition {
             params["gc"] = "01"
             
             return params
+        }
+    }
+}
+
+class YahooLocalSearch {
+    let apiId = GourmesearchsampleKeys().yahooApiID()
+    let apiUrl = "http://search.olp.yahooapis.jp/OpenLocalPlatform/V1/localSearch"
+    let perPage = 10
+    var shops = [Shop]()
+    var total = 0
+    var condition: QueryCondition = QueryCondition() {
+        didSet {
+            shops = []
+            total = 0
         }
     }
 }
