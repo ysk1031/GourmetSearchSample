@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="WD2-Cn-BtA">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopListItem" rowHeight="100" id="WD2-Cn-BtA" customClass="ShopListItemTableViewCell" customModule="GourmetSearchSample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WD2-Cn-BtA" id="VoT-kA-1hd">
@@ -90,6 +90,16 @@
                                                 <constraint firstItem="6uF-6i-8oI" firstAttribute="top" secondItem="VoT-kA-1hd" secondAttribute="topMargin" constant="8" id="zcZ-IG-VTs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coupon" destination="lFU-4M-UjF" id="Syy-nn-I9g"/>
+                                            <outlet property="iconContainer" destination="TTy-JF-GGd" id="3np-AG-EOJ"/>
+                                            <outlet property="name" destination="6uF-6i-8oI" id="5i8-De-iBy"/>
+                                            <outlet property="nameHeight" destination="1VZ-Ru-Vs8" id="cCi-Rg-nmq"/>
+                                            <outlet property="photo" destination="1O3-Ob-6nE" id="sFg-pU-TN8"/>
+                                            <outlet property="station" destination="0Ta-Wm-2yK" id="J2d-vt-K3t"/>
+                                            <outlet property="stationWidth" destination="enM-ts-cS8" id="LVY-ZW-kOk"/>
+                                            <outlet property="stationX" destination="dkl-Z8-3vz" id="tWJ-gm-iBk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

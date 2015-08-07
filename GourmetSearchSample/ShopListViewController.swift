@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  GourmetSearchSample
-//
-//  Created by Yusuke Aono on 8/6/15.
-//  Copyright (c) 2015 Yusuke Aono. All rights reserved.
-//
-
 import UIKit
 
 class ShopListViewController: UIViewController {
