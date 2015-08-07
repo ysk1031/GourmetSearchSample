@@ -5,3 +5,10 @@ pod 'SDWebImage'
 
 pod 'Alamofire'
 pod 'SwiftyJSON'
+
+plugin 'cocoapods-keys', {
+  project: 'GourmeSearchSample',
+  keys: %w{
+    YahooApiID
+  }
+}
