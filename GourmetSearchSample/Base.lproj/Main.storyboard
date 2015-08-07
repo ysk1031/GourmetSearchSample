@@ -102,6 +102,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="8R8-Uu-bUO"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="RoL-5t-amT"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -112,6 +116,9 @@
                             <constraint firstItem="uFS-5Z-tAf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jkJ-7o-K81"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="uFS-5Z-tAf" id="chd-eM-QVy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
