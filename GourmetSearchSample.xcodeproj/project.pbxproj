@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F22464551B747698004ED445 /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */; };
-		F22464591B748858004ED445 /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464581B748858004ED445 /* YahooLocal.swift */; };
+		F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464581B748858004ED445 /* YahooLocalSearch.swift */; };
 		F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */; };
 		F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */; };
 		F2DB9ADB1B7372CC00AC8F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB9AD91B7372CC00AC8F98 /* Main.storyboard */; };
@@ -34,7 +34,7 @@
 		D5CD61548A6B690F037040A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F22464511B74335A004ED445 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
-		F22464581B748858004ED445 /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
+		F22464581B748858004ED445 /* YahooLocalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocalSearch.swift; sourceTree = "<group>"; };
 		F2DB9AD01B7372CC00AC8F98 /* GourmetSearchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DB9AD41B7372CC00AC8F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		F22464571B748824004ED445 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F22464581B748858004ED445 /* YahooLocal.swift */,
+				F22464581B748858004ED445 /* YahooLocalSearch.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			files = (
 				F22464551B747698004ED445 /* ShopListItemTableViewCell.swift in Sources */,
 				F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */,
-				F22464591B748858004ED445 /* YahooLocal.swift in Sources */,
+				F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */,
 				F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

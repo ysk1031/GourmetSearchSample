@@ -72,9 +72,17 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as! ShopListItemTableViewCell
-            cell.shop = yls.shops[indexPath.row]
-            return cell
+            if indexPath.row < yls.shops.count {
+                let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as! ShopListItemTableViewCell
+                cell.shop = yls.shops[indexPath.row]
+                
+                if yls.shops.count < yls.total {
+                    if yls.shops.count - indexPath.row <= 4 {
+                        yls.loadData()
+                    }
+                }
+                return cell
+            }
         }
         return UITableViewCell()
     }

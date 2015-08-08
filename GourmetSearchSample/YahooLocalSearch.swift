@@ -86,7 +86,9 @@ class YahooLocalSearch {
     let apiId = GourmesearchsampleKeys().yahooApiID()
     let apiUrl = "http://search.olp.yahooapis.jp/OpenLocalPlatform/V1/localSearch"
     let perPage = 10
+    
     var shops = [Shop]()
+    var loading = false
     var total = 0
     var condition: QueryCondition = QueryCondition() {
         didSet {
@@ -100,10 +102,14 @@ class YahooLocalSearch {
     init(condition: QueryCondition) { self.condition = condition }
     
     func loadData(reset: Bool = false) {
+        if loading { return }
+        
         if reset {
             shops = []
             total = 0
         }
+        
+        loading = true
         
         var params = condition.queryParams
         params["appid"] = apiId
@@ -115,6 +121,7 @@ class YahooLocalSearch {
         
         Alamofire.request(.GET, apiUrl, parameters: params).response { (request, response, data, error) in
             if error != nil {
+                self.loading = false
                 var message = "Unknown error."
                 if let description = error?.description {
                     message = description
@@ -175,6 +182,7 @@ class YahooLocalSearch {
                 self.total = 0
             }
             
+            self.loading = false
             NSNotificationCenter.defaultCenter().postNotificationName(self.YLSLoadCompleteNotification, object: nil)
         }
     }
