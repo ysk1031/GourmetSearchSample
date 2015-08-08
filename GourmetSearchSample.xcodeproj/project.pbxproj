@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70B101141B7646C900037759 /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B101131B7646C900037759 /* SearchTopTableViewController.swift */; };
+		70B101161B76494900037759 /* FreewordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B101151B76494900037759 /* FreewordTableViewCell.swift */; };
 		F22464551B747698004ED445 /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */; };
 		F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464581B748858004ED445 /* YahooLocalSearch.swift */; };
 		F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		4B4713B1BA8DD98BADF4A59C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6804BD5BE8EA295009DCB286 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		70B101131B7646C900037759 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
+		70B101151B76494900037759 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
 		D5CD61548A6B690F037040A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F22464511B74335A004ED445 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 			children = (
 				F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */,
 				F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */,
+				70B101131B7646C900037759 /* SearchTopTableViewController.swift */,
+				70B101151B76494900037759 /* FreewordTableViewCell.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -312,7 +318,9 @@
 				F22464551B747698004ED445 /* ShopListItemTableViewCell.swift in Sources */,
 				F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */,
 				F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */,
+				70B101161B76494900037759 /* FreewordTableViewCell.swift in Sources */,
 				F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */,
+				70B101141B7646C900037759 /* SearchTopTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
