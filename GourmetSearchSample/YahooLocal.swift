@@ -80,6 +80,9 @@ class QueryCondition {
 }
 
 class YahooLocalSearch {
+    let YLSLoadStartNotification = "YLSLoadStartNotification"
+    let YLSLoadCompleteNotification = "YLSLoadCompleteNotification"
+    
     let apiId = GourmesearchsampleKeys().yahooApiID()
     let apiUrl = "http://search.olp.yahooapis.jp/OpenLocalPlatform/V1/localSearch"
     let perPage = 10
@@ -89,6 +92,90 @@ class YahooLocalSearch {
         didSet {
             shops = []
             total = 0
+        }
+    }
+    
+    init() {}
+    
+    init(condition: QueryCondition) { self.condition = condition }
+    
+    func loadData(reset: Bool = false) {
+        if reset {
+            shops = []
+            total = 0
+        }
+        
+        var params = condition.queryParams
+        params["appid"] = apiId
+        params["output"] = "json"
+        params["start"] = String(shops.count + 1)
+        params["results"] = String(perPage)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(YLSLoadStartNotification, object: nil)
+        
+        Alamofire.request(.GET, apiUrl, parameters: params).response { (request, response, data, error) in
+            if error != nil {
+                var message = "Unknown error."
+                if let description = error?.description {
+                    message = description
+                }
+                NSNotificationCenter.defaultCenter().postNotificationName(self.YLSLoadCompleteNotification,
+                    object: nil,
+                    userInfo: ["error": message]
+                )
+                return
+            }
+            
+            var json = JSON.nullJSON
+//              if error == nil && data != nil && data is NSData {
+            if data != nil { json = SwiftyJSON.JSON(data: data! as NSData) }
+            
+            for (key, item) in json["Feature"] {
+                var shop = Shop()
+                
+                shop.gid = item["Gid"].string
+                var name = item["Name"].string
+                shop.name = name?.stringByReplacingOccurrencesOfString("&#39;",
+                    withString: "'",
+                    options: .LiteralSearch,
+                    range: nil
+                )
+                shop.yomi = item["Property"]["Yomi"].string
+                shop.tel = item["Property"]["Tel1"].string
+                shop.address = item["Property"]["Address"].string
+                if let geometry = item["Geometry"]["Coordinates"].string {
+                    let components = geometry.componentsSeparatedByString(",")
+                    shop.lat = (components[1] as NSString).doubleValue
+                    shop.lon = (components[0] as NSString).doubleValue
+                }
+                shop.catchCopy = item["Property"]["CatchCopy"].string
+                shop.photoUrl = item["Property"]["LeadImage"].string
+                if item["Property"]["CouponFlag"].string == "true" {
+                    shop.hasCoupon = true
+                }
+                if let stations = item["Property"]["Station"].array {
+                    var line = ""
+                    if let lineString = stations[0]["Railway"].string {
+                        let lines = lineString.componentsSeparatedByString("/")
+                        line = lines[0]
+                    }
+                    if let station = stations[0]["Name"].string {
+                        shop.station = "\(line) \(station)"
+                    } else {
+                        shop.station = "\(line)"
+                    }
+                }
+                
+                self.shops.append(shop)
+            }
+            
+            if let total = json["ResultInfo"]["Total"].int {
+                self.total = total
+            } else {
+                self.total = 0
+            }
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(self.YLSLoadCompleteNotification, object: nil)
         }
     }
 }
