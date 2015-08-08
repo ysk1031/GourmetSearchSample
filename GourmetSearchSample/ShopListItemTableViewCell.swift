@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 class ShopListItemTableViewCell: UITableViewCell {
 
@@ -14,6 +15,14 @@ class ShopListItemTableViewCell: UITableViewCell {
     
     var shop: Shop = Shop() {
         didSet {
+            if let url = shop.photoUrl {
+                photo.sd_cancelCurrentImageLoad()
+                photo.sd_setImageWithURL(NSURL(string: url),
+                    placeholderImage: UIImage(named: "loading"),
+                    options: .RetryFailed
+                )
+            }
+            
             name.text = shop.name
             var x: CGFloat = 0
             let margin:CGFloat = 10
