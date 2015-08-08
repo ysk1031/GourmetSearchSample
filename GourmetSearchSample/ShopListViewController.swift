@@ -1,15 +1,18 @@
 import UIKit
 
 class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     @IBOutlet weak var tableView: UITableView!
     
     var yls: YahooLocalSearch = YahooLocalSearch()
     var loadDataObserver: NSObjectProtocol?
+    var refreshObserver: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh:", forControlEvents: .ValueChanged)
+        self.tableView.addSubview(refreshControl)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,6 +58,20 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Application logic
+    func onRefresh(refreshControl: UIRefreshControl) {
+        refreshControl.beginRefreshing()
+        refreshObserver = NSNotificationCenter.defaultCenter().addObserverForName(yls.YLSLoadCompleteNotification,
+            object: nil,
+            queue: nil,
+            usingBlock: { notification in
+                NSNotificationCenter.defaultCenter().removeObserver(self.refreshObserver!)
+                refreshControl.endRefreshing()
+            }
+        )
+        yls.loadData(reset: true)
     }
 
     // MARK: - UITableViewDelegate
