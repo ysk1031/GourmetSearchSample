@@ -24,6 +24,8 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
             object: nil,
             queue: nil,
             usingBlock: { (notification) in
+                self.tableView.reloadData()
+                
                 if notification.userInfo != nil {
                     if let userInfo = notification.userInfo as? [String: String!] {
                         if userInfo["error"] != nil {
@@ -62,13 +64,16 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        if section == 0 {
+            return yls.shops.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as! ShopListItemTableViewCell
-            cell.name.text = "\(indexPath.row)"
+            cell.shop = yls.shops[indexPath.row]
             return cell
         }
         return UITableViewCell()
