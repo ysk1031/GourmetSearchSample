@@ -44,7 +44,9 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         )
         
-        yls.loadData(reset: true)
+        if yls.shops.count == 0 {
+            yls.loadData(reset: true)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -75,6 +77,11 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         return 100
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        performSegueWithIdentifier("PushShopDetail", sender: indexPath)
+    }
+    
     // MARK: - UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -98,6 +105,16 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         return UITableViewCell()
+    }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PushShopDetail" {
+            let vc = segue.destinationViewController as! ShopDetailViewController
+            if let indexPath = sender as? NSIndexPath {
+                vc.shop = yls.shops[indexPath.row]
+            }
+        }
     }
 
 }

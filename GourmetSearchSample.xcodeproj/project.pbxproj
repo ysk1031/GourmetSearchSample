@@ -11,6 +11,7 @@
 		70B101161B76494900037759 /* FreewordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B101151B76494900037759 /* FreewordTableViewCell.swift */; };
 		F22464551B747698004ED445 /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */; };
 		F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464581B748858004ED445 /* YahooLocalSearch.swift */; };
+		F2B78D181B77302D00620B42 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B78D171B77302D00620B42 /* ShopDetailViewController.swift */; };
 		F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */; };
 		F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */; };
 		F2DB9ADB1B7372CC00AC8F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB9AD91B7372CC00AC8F98 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		F22464511B74335A004ED445 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 		F22464581B748858004ED445 /* YahooLocalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocalSearch.swift; sourceTree = "<group>"; };
+		F2B78D171B77302D00620B42 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		F2DB9AD01B7372CC00AC8F98 /* GourmetSearchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DB9AD41B7372CC00AC8F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */,
 				70B101131B7646C900037759 /* SearchTopTableViewController.swift */,
 				70B101151B76494900037759 /* FreewordTableViewCell.swift */,
+				F2B78D171B77302D00620B42 /* ShopDetailViewController.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */,
 				F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */,
 				70B101161B76494900037759 /* FreewordTableViewCell.swift in Sources */,
+				F2B78D181B77302D00620B42 /* ShopDetailViewController.swift in Sources */,
 				F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */,
 				70B101141B7646C900037759 /* SearchTopTableViewController.swift in Sources */,
 			);
