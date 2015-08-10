@@ -13,6 +13,10 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh:", forControlEvents: .ValueChanged)
         self.tableView.addSubview(refreshControl)
+        
+        if !(self.navigationController is FavoriteNavigationController) {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -108,6 +112,37 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         performSegueWithIdentifier("PushShopDetail", sender: indexPath)
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return self.navigationController is FavoriteNavigationController
+    }
+    
+    func tableView(tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            Favorite.remove(yls.shops[indexPath.row].gid)
+            yls.shops.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return self.navigationController is FavoriteNavigationController
+    }
+    
+    func tableView(tableView: UITableView,
+        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
+        toIndexPath destinationIndexPath: NSIndexPath) {
+    
+        if sourceIndexPath == destinationIndexPath { return }
+            
+        let source = yls.shops[sourceIndexPath.row]
+        yls.shops.removeAtIndex(sourceIndexPath.row)
+        yls.shops.insert(source, atIndex: destinationIndexPath.row)
+        Favorite.move(sourceIndexPath.row, destinationIndexPath.row)
+    }
+    
     // MARK: - UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -140,6 +175,17 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
             if let indexPath = sender as? NSIndexPath {
                 vc.shop = yls.shops[indexPath.row]
             }
+        }
+    }
+    
+    // MARK: - IBAction
+    @IBAction func editButtonTapped(sender: UIBarButtonItem) {
+        if tableView.editing {
+            tableView.setEditing(false, animated: true)
+            sender.title = "編集"
+        } else {
+            tableView.setEditing(true, animated: true)
+            sender.title = "完了"
         }
     }
 

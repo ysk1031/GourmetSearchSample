@@ -236,7 +236,13 @@
                             <constraint firstItem="uFS-5Z-tAf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jkJ-7o-K81"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vRh-bv-W5D"/>
+                    <navigationItem key="navigationItem" id="vRh-bv-W5D">
+                        <barButtonItem key="rightBarButtonItem" title="編集" id="08c-Tj-xOh">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="vXZ-lx-hvc" id="N0f-Yy-YWU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="uFS-5Z-tAf" id="chd-eM-QVy"/>
                         <segue destination="dDl-hJ-bbx" kind="show" identifier="PushShopDetail" id="AMC-q2-oyR"/>
