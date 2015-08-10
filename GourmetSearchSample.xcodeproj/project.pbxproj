@@ -15,6 +15,8 @@
 		F2BE54861B78627000059711 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE54851B78627000059711 /* Favorite.swift */; };
 		F2BE54891B78738F00059711 /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE54881B78738F00059711 /* SearchNavigationController.swift */; };
 		F2BE548B1B7873AA00059711 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE548A1B7873AA00059711 /* FavoriteNavigationController.swift */; };
+		F2BE548D1B788FB100059711 /* ShopMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE548C1B788FB100059711 /* ShopMapDetailViewController.swift */; };
+		F2BE548F1B7893AB00059711 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE548E1B7893AB00059711 /* LocationService.swift */; };
 		F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */; };
 		F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */; };
 		F2DB9ADB1B7372CC00AC8F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB9AD91B7372CC00AC8F98 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		F2BE54851B78627000059711 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		F2BE54881B78738F00059711 /* SearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
 		F2BE548A1B7873AA00059711 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
+		F2BE548C1B788FB100059711 /* ShopMapDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopMapDetailViewController.swift; sourceTree = "<group>"; };
+		F2BE548E1B7893AB00059711 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F2DB9AD01B7372CC00AC8F98 /* GourmetSearchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DB9AD41B7372CC00AC8F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				F2B78D171B77302D00620B42 /* ShopDetailViewController.swift */,
 				F22464541B747698004ED445 /* ShopListItemTableViewCell.swift */,
 				F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */,
+				F2BE548C1B788FB100059711 /* ShopMapDetailViewController.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F2BE54851B78627000059711 /* Favorite.swift */,
+				F2BE548E1B7893AB00059711 /* LocationService.swift */,
 				F22464581B748858004ED445 /* YahooLocalSearch.swift */,
 			);
 			name = Common;
@@ -335,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BE548D1B788FB100059711 /* ShopMapDetailViewController.swift in Sources */,
 				F22464551B747698004ED445 /* ShopListItemTableViewCell.swift in Sources */,
 				F2BE54861B78627000059711 /* Favorite.swift in Sources */,
 				F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */,
@@ -344,6 +351,7 @@
 				F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */,
 				F2BE548B1B7873AA00059711 /* FavoriteNavigationController.swift in Sources */,
 				70B101141B7646C900037759 /* SearchTopTableViewController.swift in Sources */,
+				F2BE548F1B7893AB00059711 /* LocationService.swift in Sources */,
 				F2BE54891B78738F00059711 /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
