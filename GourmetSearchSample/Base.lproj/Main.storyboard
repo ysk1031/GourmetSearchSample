@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A4S-7B-Da0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gA3-xS-oaW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -72,10 +72,30 @@
             </objects>
             <point key="canvasLocation" x="-401" y="351"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="cLA-HH-eOa">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndo-bE-HnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="gA3-xS-oaW" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ROU-K5-HS2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="A4S-7B-Da0" kind="relationship" relationship="viewControllers" id="RFd-qM-jhn"/>
+                        <segue destination="PJD-KV-iFb" kind="relationship" relationship="viewControllers" id="Z0f-3w-SWR"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-1988" y="351"/>
+        </scene>
+        <!--検索-->
         <scene sceneID="OA2-tL-gom">
             <objects>
                 <navigationController id="A4S-7B-Da0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="検索" image="tabbar-search" id="FY7-NY-eP0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ef-6z-i9p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -87,6 +107,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JQ-DE-sd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1125" y="351"/>
+        </scene>
+        <!--お気に入り-->
+        <scene sceneID="eoj-US-ezN">
+            <objects>
+                <navigationController id="PJD-KV-iFb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="お気に入り" image="tabbar-favorite" id="q3b-kd-0Se"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XYj-5f-nJ7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="K1S-N0-6iO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGl-Jg-IyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1125" y="1093"/>
         </scene>
         <!--Shop List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -101,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uFS-5Z-tAf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopListItem" rowHeight="100" id="WD2-Cn-BtA" customClass="ShopListItemTableViewCell" customModule="GourmetSearchSample" customModuleProvider="target">
@@ -199,6 +236,7 @@
                             <constraint firstItem="uFS-5Z-tAf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jkJ-7o-K81"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vRh-bv-W5D"/>
                     <connections>
                         <outlet property="tableView" destination="uFS-5Z-tAf" id="chd-eM-QVy"/>
                         <segue destination="dDl-hJ-bbx" kind="show" identifier="PushShopDetail" id="AMC-q2-oyR"/>
@@ -206,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="351"/>
+            <point key="canvasLocation" x="340" y="761"/>
         </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="BDy-fa-eWB">
@@ -221,7 +259,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tF-66-Dqa">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVk-EQ-rdk">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="641"/>
@@ -434,11 +472,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nd8-gF-WwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="351"/>
+            <point key="canvasLocation" x="1102" y="761"/>
         </scene>
     </scenes>
     <resources>
         <image name="blank" width="1" height="1"/>
         <image name="star-off" width="40" height="40"/>
+        <image name="tabbar-favorite" width="30" height="30"/>
+        <image name="tabbar-search" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K1S-N0-6iO"/>
+    </inferredMetricsTieBreakers>
 </document>
