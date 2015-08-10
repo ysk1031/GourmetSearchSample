@@ -29,6 +29,8 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
         name.text = shop.name
         tel.text = shop.tel
         address.text = shop.address
+        
+        updateFavoriteButton()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,6 +66,17 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    // MARK: - Application logic
+    func updateFavoriteButton() {
+        if Favorite.inFavorites(shop.gid) {
+            favoriteIcon.image = UIImage(named: "star-on")
+            favoriteLabel.text = "お気に入りからはずす"
+        } else {
+            favoriteIcon.image = UIImage(named: "star-off")
+            favoriteLabel.text = "お気に入りに入れる"
+        }
+    }
+    
     // MARK: - IBAction
     @IBAction func telTapped(sender: UIButton) {
         println("telTapped")
@@ -74,7 +87,8 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
     }
    
     @IBAction func favoriteTapped(sender: UIButton) {
-        println("favoriteTapped")
+        Favorite.toggle(shop.gid)
+        updateFavoriteButton()
     }
 
     /*
