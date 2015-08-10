@@ -61,12 +61,14 @@
                     <navigationItem key="navigationItem" title="店舗検索" id="0cj-0S-FVh"/>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="PushShopList" id="Njp-Ad-rU1"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="PushShopListFromHere" id="zHP-Kt-T8D"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKu-Kv-DHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="3wP-je-AWL">
                     <connections>
                         <action selector="onTap:" destination="HYa-NZ-Ajg" id="URX-oT-vpQ"/>
+                        <outlet property="delegate" destination="bPJ-To-sxk" id="Jsi-yw-riv"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -529,6 +531,6 @@
         <image name="tabbar-search" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K1S-N0-6iO"/>
+        <segue reference="zHP-Kt-T8D"/>
     </inferredMetricsTieBreakers>
 </document>
