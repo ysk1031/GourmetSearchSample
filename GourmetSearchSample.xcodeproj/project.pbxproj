@@ -13,6 +13,8 @@
 		F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22464581B748858004ED445 /* YahooLocalSearch.swift */; };
 		F2B78D181B77302D00620B42 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B78D171B77302D00620B42 /* ShopDetailViewController.swift */; };
 		F2BE54861B78627000059711 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE54851B78627000059711 /* Favorite.swift */; };
+		F2BE54891B78738F00059711 /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE54881B78738F00059711 /* SearchNavigationController.swift */; };
+		F2BE548B1B7873AA00059711 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE548A1B7873AA00059711 /* FavoriteNavigationController.swift */; };
 		F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */; };
 		F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */; };
 		F2DB9ADB1B7372CC00AC8F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB9AD91B7372CC00AC8F98 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		F22464581B748858004ED445 /* YahooLocalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocalSearch.swift; sourceTree = "<group>"; };
 		F2B78D171B77302D00620B42 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		F2BE54851B78627000059711 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		F2BE54881B78738F00059711 /* SearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
+		F2BE548A1B7873AA00059711 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		F2DB9AD01B7372CC00AC8F98 /* GourmetSearchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DB9AD41B7372CC00AC8F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		F2BE54871B78733400059711 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				F2BE548A1B7873AA00059711 /* FavoriteNavigationController.swift */,
+				F2BE54881B78738F00059711 /* SearchNavigationController.swift */,
+			);
+			name = Tabs;
+			sourceTree = "<group>";
+		};
 		F2DB9AC71B7372CC00AC8F98 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 				F2DB9AD91B7372CC00AC8F98 /* Main.storyboard */,
 				F22464561B7476AD004ED445 /* ShopList */,
 				F2DB9AD31B7372CC00AC8F98 /* Supporting Files */,
+				F2BE54871B78733400059711 /* Tabs */,
 			);
 			path = GourmetSearchSample;
 			sourceTree = "<group>";
@@ -328,7 +342,9 @@
 				70B101161B76494900037759 /* FreewordTableViewCell.swift in Sources */,
 				F2B78D181B77302D00620B42 /* ShopDetailViewController.swift in Sources */,
 				F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */,
+				F2BE548B1B7873AA00059711 /* FavoriteNavigationController.swift in Sources */,
 				70B101141B7646C900037759 /* SearchTopTableViewController.swift in Sources */,
+				F2BE54891B78738F00059711 /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

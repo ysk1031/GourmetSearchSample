@@ -23,6 +23,10 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
             object: nil,
             queue: nil,
             usingBlock: { (notification) in
+                if self.yls.condition.gid != nil {
+                    self.yls.sortByGid()
+                }
+                
                 self.tableView.reloadData()
                 
                 if notification.userInfo != nil {
@@ -45,7 +49,13 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         )
         
         if yls.shops.count == 0 {
-            yls.loadData(reset: true)
+            if self.navigationController is FavoriteNavigationController {
+                loadFavorites()
+                self.navigationItem.title = "お気に入り"
+            } else {
+                yls.loadData(reset: true)
+                self.navigationItem.title = "店舗一覧"
+            }
         }
     }
     
@@ -59,6 +69,18 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // MARK: - Application logic
+    func loadFavorites() {
+        Favorite.load()
+        if Favorite.favorites.count > 0 {
+            var condition = QueryCondition()
+            condition.gid = join(",", Favorite.favorites)
+            yls.condition = condition
+            yls.loadData(reset: true)
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName(yls.YLSLoadCompleteNotification, object: nil)
+        }
+    }
+    
     func onRefresh(refreshControl: UIRefreshControl) {
         refreshControl.beginRefreshing()
         refreshObserver = NSNotificationCenter.defaultCenter().addObserverForName(yls.YLSLoadCompleteNotification,
@@ -69,7 +91,11 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
                 refreshControl.endRefreshing()
             }
         )
-        yls.loadData(reset: true)
+        if self.navigationController is FavoriteNavigationController {
+            loadFavorites()
+        } else {
+            yls.loadData(reset: true)
+        }
     }
 
     // MARK: - UITableViewDelegate

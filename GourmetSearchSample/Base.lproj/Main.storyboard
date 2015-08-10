@@ -94,7 +94,7 @@
         <!--検索-->
         <scene sceneID="OA2-tL-gom">
             <objects>
-                <navigationController id="A4S-7B-Da0" sceneMemberID="viewController">
+                <navigationController id="A4S-7B-Da0" customClass="SearchNavigationController" customModule="GourmetSearchSample" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="検索" image="tabbar-search" id="FY7-NY-eP0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ef-6z-i9p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -111,7 +111,7 @@
         <!--お気に入り-->
         <scene sceneID="eoj-US-ezN">
             <objects>
-                <navigationController id="PJD-KV-iFb" sceneMemberID="viewController">
+                <navigationController id="PJD-KV-iFb" customClass="FavoriteNavigationController" customModule="GourmetSearchSample" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="お気に入り" image="tabbar-favorite" id="q3b-kd-0Se"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XYj-5f-nJ7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
