@@ -1,7 +1,7 @@
 import UIKit
 import MapKit
 
-class ShopDetailViewController: UIViewController {
+class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -10,9 +10,9 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var addressContainerHeight: NSLayoutConstraint!
     @IBOutlet weak var map: MKMapView!
-    @IBOutlet weak var favoriteIcon: UILabel!
+    @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
-    
+        
     var shop = Shop()
 
     override func viewDidLoad() {
@@ -30,6 +30,16 @@ class ShopDetailViewController: UIViewController {
         tel.text = shop.tel
         address.text = shop.address
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.scrollView.delegate = self
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.scrollView.delegate = nil
+        super.viewDidDisappear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,6 +53,15 @@ class ShopDetailViewController: UIViewController {
         let addressFrame = address.sizeThatFits(CGSizeMake(address.frame.size.width, CGFloat.max))
         addressContainerHeight.constant = addressFrame.height
         view.layoutIfNeeded()
+    }
+    
+    // MARK: - UIScrollView delegate
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let scrollOffset = scrollView.contentOffset.y + scrollView.contentInset.top
+        if scrollOffset <= 0 {
+            photo.frame.origin.y = scrollOffset
+            photo.frame.size.height = 200 - scrollOffset
+        }
     }
     
     // MARK: - IBAction

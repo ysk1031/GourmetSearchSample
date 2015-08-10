@@ -347,18 +347,15 @@
                                                             <action selector="favoriteTapped:" destination="dDl-hJ-bbx" eventType="touchUpInside" id="x9q-Yk-I8e"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaN-m4-7nK" userLabel="お気に入りアイコン">
-                                                        <rect key="frame" x="8" y="10" width="32" height="32"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-off" translatesAutoresizingMaskIntoConstraints="NO" id="BcF-h5-RGo" userLabel="お気に入りアイコン">
+                                                        <rect key="frame" x="8" y="6" width="32" height="32"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="32" id="ICA-PR-rYF"/>
-                                                            <constraint firstAttribute="height" constant="32" id="r2J-6X-Y9l"/>
+                                                            <constraint firstAttribute="height" constant="32" id="dVY-5j-Y8h"/>
+                                                            <constraint firstAttribute="width" constant="32" id="zDw-2x-bhs"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wad-Ry-TcS" userLabel="お気に入りラベル">
-                                                        <rect key="frame" x="48" y="-3" width="544" height="44"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お気に入りに入れる" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQ9-2O-Swg" userLabel="お気に入りラベル">
+                                                        <rect key="frame" x="48" y="0.0" width="544" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -366,17 +363,17 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" secondItem="Wad-Ry-TcS" secondAttribute="height" id="1tL-6C-Mnu"/>
+                                                    <constraint firstAttribute="centerY" secondItem="BcF-h5-RGo" secondAttribute="centerY" id="28Z-CF-Q3X"/>
                                                     <constraint firstItem="opR-Dw-9Of" firstAttribute="leading" secondItem="YlK-hK-u0z" secondAttribute="leading" id="5gh-rc-2pc"/>
                                                     <constraint firstAttribute="height" secondItem="opR-Dw-9Of" secondAttribute="height" id="9e3-cI-P4U"/>
-                                                    <constraint firstAttribute="centerY" secondItem="Wad-Ry-TcS" secondAttribute="centerY" constant="3.5" id="K6H-XC-gZ3"/>
+                                                    <constraint firstItem="BcF-h5-RGo" firstAttribute="leading" secondItem="YlK-hK-u0z" secondAttribute="leading" constant="8" id="BqV-Sg-AMm"/>
+                                                    <constraint firstAttribute="centerY" secondItem="MQ9-2O-Swg" secondAttribute="centerY" constant="0.5" id="IxE-TF-d4A"/>
                                                     <constraint firstAttribute="height" constant="44" id="Ltw-Tw-3yo"/>
-                                                    <constraint firstAttribute="centerY" secondItem="FaN-m4-7nK" secondAttribute="centerY" constant="-3.5" id="Xei-Jz-35s"/>
                                                     <constraint firstAttribute="trailing" secondItem="opR-Dw-9Of" secondAttribute="trailing" id="cM5-Kx-V4g"/>
-                                                    <constraint firstItem="FaN-m4-7nK" firstAttribute="leading" secondItem="YlK-hK-u0z" secondAttribute="leading" constant="8" id="d9C-go-KJP"/>
+                                                    <constraint firstItem="MQ9-2O-Swg" firstAttribute="leading" secondItem="BcF-h5-RGo" secondAttribute="trailing" constant="8" id="dRu-ST-AZ0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MQ9-2O-Swg" secondAttribute="trailing" constant="8" id="de9-LQ-K40"/>
+                                                    <constraint firstAttribute="height" secondItem="MQ9-2O-Swg" secondAttribute="height" id="gyc-uJ-Slr"/>
                                                     <constraint firstItem="opR-Dw-9Of" firstAttribute="top" secondItem="YlK-hK-u0z" secondAttribute="top" id="m96-UD-l3V"/>
-                                                    <constraint firstItem="Wad-Ry-TcS" firstAttribute="leading" secondItem="FaN-m4-7nK" secondAttribute="trailing" constant="8" id="qeW-dH-vSR"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Wad-Ry-TcS" secondAttribute="trailing" constant="8" id="r12-b1-7Ah"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -425,8 +422,8 @@
                     <connections>
                         <outlet property="address" destination="AVe-eo-WVY" id="Hlr-ct-iJU"/>
                         <outlet property="addressContainerHeight" destination="e37-KR-Sm8" id="dxR-Vn-z7j"/>
-                        <outlet property="favoriteIcon" destination="FaN-m4-7nK" id="vIn-SF-gXt"/>
-                        <outlet property="favoriteLabel" destination="Wad-Ry-TcS" id="KCn-Hw-6Ys"/>
+                        <outlet property="favoriteIcon" destination="BcF-h5-RGo" id="X1K-0F-VHy"/>
+                        <outlet property="favoriteLabel" destination="MQ9-2O-Swg" id="B4s-xh-7Jt"/>
                         <outlet property="map" destination="q8e-vb-ha6" id="tPB-VD-UU5"/>
                         <outlet property="name" destination="Iuq-dd-lkx" id="Qcf-0O-e6D"/>
                         <outlet property="nameHeight" destination="rTB-x1-gWd" id="ahD-IL-A8M"/>
@@ -442,5 +439,6 @@
     </scenes>
     <resources>
         <image name="blank" width="1" height="1"/>
+        <image name="star-off" width="40" height="40"/>
     </resources>
 </document>
