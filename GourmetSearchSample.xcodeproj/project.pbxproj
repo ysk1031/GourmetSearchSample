@@ -17,6 +17,10 @@
 		F2BE548B1B7873AA00059711 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE548A1B7873AA00059711 /* FavoriteNavigationController.swift */; };
 		F2BE548D1B788FB100059711 /* ShopMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE548C1B788FB100059711 /* ShopMapDetailViewController.swift */; };
 		F2BE548F1B7893AB00059711 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE548E1B7893AB00059711 /* LocationService.swift */; };
+		F2BE54911B78E84D00059711 /* Licenses.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2BE54901B78E84D00059711 /* Licenses.plist */; };
+		F2BE54941B78EC4700059711 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE54931B78EC4700059711 /* AboutViewController.swift */; };
+		F2BE54961B78EF2F00059711 /* LicenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE54951B78EF2F00059711 /* LicenseListViewController.swift */; };
+		F2BE54981B78F56100059711 /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BE54971B78F56100059711 /* LicenseDetailViewController.swift */; };
 		F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */; };
 		F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB9AD71B7372CC00AC8F98 /* ShopListViewController.swift */; };
 		F2DB9ADB1B7372CC00AC8F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB9AD91B7372CC00AC8F98 /* Main.storyboard */; };
@@ -51,6 +55,10 @@
 		F2BE548A1B7873AA00059711 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		F2BE548C1B788FB100059711 /* ShopMapDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopMapDetailViewController.swift; sourceTree = "<group>"; };
 		F2BE548E1B7893AB00059711 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		F2BE54901B78E84D00059711 /* Licenses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Licenses.plist; sourceTree = "<group>"; };
+		F2BE54931B78EC4700059711 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F2BE54951B78EF2F00059711 /* LicenseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseListViewController.swift; sourceTree = "<group>"; };
+		F2BE54971B78F56100059711 /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
 		F2DB9AD01B7372CC00AC8F98 /* GourmetSearchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DB9AD41B7372CC00AC8F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +139,16 @@
 			name = Tabs;
 			sourceTree = "<group>";
 		};
+		F2BE54921B78EC2800059711 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				F2BE54931B78EC4700059711 /* AboutViewController.swift */,
+				F2BE54971B78F56100059711 /* LicenseDetailViewController.swift */,
+				F2BE54951B78EF2F00059711 /* LicenseListViewController.swift */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		F2DB9AC71B7372CC00AC8F98 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +172,7 @@
 		F2DB9AD21B7372CC00AC8F98 /* GourmetSearchSample */ = {
 			isa = PBXGroup;
 			children = (
+				F2BE54921B78EC2800059711 /* About */,
 				F2DB9AD51B7372CC00AC8F98 /* AppDelegate.swift */,
 				F22464571B748824004ED445 /* Common */,
 				F2DB9ADC1B7372CC00AC8F98 /* Images.xcassets */,
@@ -170,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				F2DB9AD41B7372CC00AC8F98 /* Info.plist */,
+				F2BE54901B78E84D00059711 /* Licenses.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -275,6 +295,7 @@
 			files = (
 				F2DB9ADB1B7372CC00AC8F98 /* Main.storyboard in Resources */,
 				F2DB9AE01B7372CC00AC8F98 /* LaunchScreen.xib in Resources */,
+				F2BE54911B78E84D00059711 /* Licenses.plist in Resources */,
 				F2DB9ADD1B7372CC00AC8F98 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,15 +364,18 @@
 			files = (
 				F2BE548D1B788FB100059711 /* ShopMapDetailViewController.swift in Sources */,
 				F22464551B747698004ED445 /* ShopListItemTableViewCell.swift in Sources */,
+				F2BE54981B78F56100059711 /* LicenseDetailViewController.swift in Sources */,
 				F2BE54861B78627000059711 /* Favorite.swift in Sources */,
 				F2DB9AD81B7372CC00AC8F98 /* ShopListViewController.swift in Sources */,
 				F22464591B748858004ED445 /* YahooLocalSearch.swift in Sources */,
 				70B101161B76494900037759 /* FreewordTableViewCell.swift in Sources */,
+				F2BE54961B78EF2F00059711 /* LicenseListViewController.swift in Sources */,
 				F2B78D181B77302D00620B42 /* ShopDetailViewController.swift in Sources */,
 				F2DB9AD61B7372CC00AC8F98 /* AppDelegate.swift in Sources */,
 				F2BE548B1B7873AA00059711 /* FavoriteNavigationController.swift in Sources */,
 				70B101141B7646C900037759 /* SearchTopTableViewController.swift in Sources */,
 				F2BE548F1B7893AB00059711 /* LocationService.swift in Sources */,
+				F2BE54941B78EC4700059711 /* AboutViewController.swift in Sources */,
 				F2BE54891B78738F00059711 /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
